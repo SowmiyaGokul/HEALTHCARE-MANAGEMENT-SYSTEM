@@ -1,0 +1,16 @@
+SELECT * FROM `HOSPTL.MANAGEMENT`.appointment;
+SELECT * FROM `HOSPTL.MANAGEMENT`.Billing;
+SELECT * FROM `HOSPTL.MANAGEMENT`.Doctor;
+SELECT * FROM `HOSPTL.MANAGEMENT`.`medical procedure`;
+SELECT * FROM `HOSPTL.MANAGEMENT`.Patient;
+
+show tables from `HOSPTL.MANAGEMENT`;
+#group of patients admitted in a same date
+
+select Date.appointment,PatientID.Patient
+from appointment
+join Patient
+on
+Date.appointment=PatientID.Patient;
+
+1. List of patients who are admitted on a particular date.
