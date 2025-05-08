@@ -1,5 +1,11 @@
 # HEALTHCARE-MANAGEMENT-
 About Dataset
+1.appointment.csv
+2.Billing.csv
+3.Doctor.csv
+4.Medical Procedure.csv
+5.Patient.csv
+
 Patients Table:
 
 PatientID: Unique identifier for each patient.
