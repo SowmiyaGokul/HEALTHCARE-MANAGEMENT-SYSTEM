@@ -1,3 +1,4 @@
+use database hospital management system
 SELECT * FROM `HOSPTL.MANAGEMENT`.appointment;
 SELECT * FROM `HOSPTL.MANAGEMENT`.Billing;
 SELECT * FROM `HOSPTL.MANAGEMENT`.Doctor;
@@ -7,10 +8,35 @@ SELECT * FROM `HOSPTL.MANAGEMENT`.Patient;
 show tables from `HOSPTL.MANAGEMENT`;
 #group of patients admitted in a same date
 
-select Date.appointment,PatientID.Patient
-from appointment
-join Patient
-on
-Date.appointment=PatientID.Patient;
+1.LIST PATIENTS PAID ABOVE 100000
+select PatientID, Amount, 
+case 
+when Amount>1000000 then "high" 
+else "less"
+end as "amount range"
+from `HOSP DB MS`.billing;
 
-1. List of patients who are admitted on a particular date.
+2.LIST DATE AND PATIENT NAME WHEN PATIENTS ADMITTED 
+select Date.appointment , firstname.patient
+from appointment
+join patient
+on
+appointment.PatientID= patient.PatientID;
+
+
+3.TAKE OUT PATIENTS WHO TREATED WITH THYROID BOIPSY
+select * from treatment
+where ProcedureName = "Thyroid biopsy";
+
+4.GET ME PATIENT DETAILS WITH HIGHEST BILL AMOUNT
+select PatientID,Amount
+from billing
+order by Amount desc limit 1;
+
+5.GET ME TOTAL BILL AMOUNT PAID BY PATIENTS
+select sum(Amount) as total
+from billing;
+
+6.
+
+
