@@ -37,6 +37,12 @@ order by Amount desc limit 1;
 select sum(Amount) as total
 from billing;
 
-6.
+6.GET PROCEDURE NAME ALONG WITH PATIENT FIRST NAME 
+select treatment.ProcedureName, patient.firstname 
+from treatment
+cross join  patient
+order by firstname desc;
+
+7.
 
 
